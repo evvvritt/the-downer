@@ -1,9 +1,10 @@
 <template>
   <div class="carousel w-100">
-    <figure v-for="(slide, index) in slides" class="carousel-cell w-100 min-h-100vh relative" :key="index">
-      <div v-if="optimalImgW" class="absolute bg-contain bg-center bg-no-repeat" :data-flickity-bg-lazyload="thumb(slide.primary.image)">
-      </div>
-    </figure>
+    <div v-for="(slide, index) in slides" class="carousel-cell w-100 h-100vh flex items-center justify-center" :key="index">
+      <figure class="relative w-100 h-100vh">
+        <div v-if="optimalImgW" class="absolute bg-contain bg-center bg-no-repeat" :data-flickity-bg-lazyload="thumb(slide.primary.image)"></div>
+      </figure>
+    </div>
   </div>
 </template>
 
@@ -68,7 +69,7 @@ export default {
       const isPortrait = image.dimensions.height > image.dimensions.width
       const size = isPortrait ? this.optimalImgH + '_h' : this.optimalImgW
       console.log(size)
-      return (image[size] && image[size].url) || ''
+      return (image[size] && image[size].url) || image.thumbnail.url
     }
   },
   created () {
@@ -83,6 +84,10 @@ export default {
 </script>
 
 <style scoped>
+figure{
+  max-width:2880px;
+  max-height:2880px;
+}
 figure > div{
   top:3rem;
   left:3rem;

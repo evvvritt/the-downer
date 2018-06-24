@@ -1,5 +1,5 @@
 <template>
-  <article class="min-h-100vh">
+  <article class="min-h-100vh pb4">
     <transition name="fade">
       <div v-if="doc">
         <header class="pt6 px2 mb4 max-width-1 mx-auto content-box">
@@ -15,8 +15,11 @@
         <section class="max-width-1 mx-auto content-box px2">
           <header class="my4 center">
             <span class="cursor-pointer underline inline-block px1" style="width:4em" @click="showText = !showText" cl>Text</span><a v-if="doc.pdf.url" class="inline-block border-left px1" style="width:4em" :href="doc.pdf.url" target="_blank" rel="noopener">PDF</a></header>
-          <div class="mt6 left-align" :class="{'opacity-0 h-0': !showText}" v-html="$options.filters.richtext(doc.text)"></div>
+          <div class="mt6 left-align children-mt-1em" :class="{'opacity-0 h-0 overflow-hidden': !showText}" v-html="$options.filters.richtext(doc.text)"></div>
         </section>
+        <footer class="mt6">
+          <site-footer></site-footer>
+        </footer>
       </div>
     </transition>
     <transition name="quickfade">
@@ -31,10 +34,11 @@
 <script>
 import Vue from 'vue'
 import Viewer from '@/components/Viewer'
+import SiteFooter from '@/components/Footer'
 export default {
   name: 'Exhibition',
   props: ['uid'],
-  components: { Viewer },
+  components: { Viewer, SiteFooter },
   data () {
     return {
       doc: null,
