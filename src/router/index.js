@@ -14,9 +14,10 @@ export default new Router({
       component: Home
     },
     {
-      path: '/exhibitions/:id',
+      path: '/exhibitions/:uid',
       name: 'Exhibition',
-      component: Exhibition
+      component: Exhibition,
+      props: true
     },
     {
       path: '*',

@@ -1,0 +1,17 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  font-size:var(--rem);
+}
+
+body{
+  line-height: normal;
+}
+
+a,a:link,a:visited{
+  color:inherit;
+}

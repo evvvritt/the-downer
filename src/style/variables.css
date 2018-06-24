@@ -1,0 +1,26 @@
+/* @custom-media --bkpt-md (max-width: 812px); /* iphoneX landscape */
+@custom-media --bkpt-sm (max-width: 600px);
+
+:root{
+  --basefont:18px;
+  --rem: 10px;
+
+  --white: white;
+  --black: black;
+
+  --h1:2em;
+  --h2:1.75em;
+  --h3:1.5em;
+  --h4:1.25em;
+  --h5:1.125em;
+  --h6:1em;
+  
+  --space-1: 1rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+  --space-4: 4rem;
+  --space-6: 6rem;
+
+  --line-height-1:1;
+  --line-height-2:1.2; /* info */
+}
