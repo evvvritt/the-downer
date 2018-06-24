@@ -30,4 +30,7 @@ export default {
 /* transitions */
 .fade-enter-active,.fade-leave-active{transition:opacity 800ms;}
 .fade-enter,.fade-leave-to{opacity:0;}
+
+.quickfade-enter-active,.quickfade-leave-active{transition:opacity 600ms;}
+.quickfade-enter,.quickfade-leave-to{opacity:0;}
 </style>
