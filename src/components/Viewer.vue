@@ -1,7 +1,7 @@
 <template>
   <div class="carousel w-100">
     <figure v-for="(slide, index) in slides" class="carousel-cell w-100 min-h-100vh relative" :key="index">
-      <div class="absolute bg-contain bg-center bg-no-repeat" :data-flickity-bg-lazyload="slide.primary.image.url">
+      <div v-if="optimalImgW" class="absolute bg-contain bg-center bg-no-repeat" :data-flickity-bg-lazyload="thumb(slide.primary.image)">
       </div>
     </figure>
   </div>
@@ -17,7 +17,16 @@ export default {
   },
   data () {
     return {
-      flkty: null
+      flkty: null,
+      optimalImgW: null,
+      optimalImgH: null,
+      sizes: [
+        { label: 'xs', length: 640 },
+        { label: 'small', length: 1024 },
+        { label: 'medium', length: 1440 },
+        { label: 'large', length: 1920 },
+        { label: 'xl', length: 2880 }
+      ]
     }
   },
   methods: {
@@ -46,7 +55,25 @@ export default {
     },
     focus () {
       setTimeout(() => this.$el.focus(), 0)
+    },
+    getOptimalSize (length) {
+      const dpx = window.devicePixelRatio || 1
+      length = length * (dpx * 0.8)
+      const isLarger = this.sizes.filter(size => size.length >= length)
+      const best = isLarger.length > 0 ? isLarger[0] : this.sizes[this.sizes.length - 1]
+      return best.label
+    },
+    thumb (image) {
+      if (!image) return ''
+      const isPortrait = image.dimensions.height > image.dimensions.width
+      const size = isPortrait ? this.optimalImgH + '_h' : this.optimalImgW
+      console.log(size)
+      return (image[size] && image[size].url) || ''
     }
+  },
+  created () {
+    this.optimalImgW = this.getOptimalSize(window.innerWidth)
+    this.optimalImgH = this.getOptimalSize(window.innerHeight)
   },
   mounted () {
     this.init()
