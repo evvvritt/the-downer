@@ -2,7 +2,7 @@
 @custom-media --bkpt-sm (max-width: 600px);
 
 :root{
-  --basefont:18px;
+  --basefont:17px;
   --rem: 10px;
 
   --white: white;
