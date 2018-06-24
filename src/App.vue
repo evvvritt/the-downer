@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="bg-white center">
     <router-view/>
   </div>
 </template>
@@ -12,12 +11,14 @@ export default {
 </script>
 
 <style>
+@import 'style/variables';
+@import 'style/global';
+@import 'style/atomic';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Times New Roman', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size:var(--basefont);
 }
 </style>

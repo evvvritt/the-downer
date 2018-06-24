@@ -11,6 +11,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "postcss-calc": "^6.0.1",
+    "postcss-color-function": "^4.0.1",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-custom-properties": "^7.0.0",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-nested": "^3.0.0",
+    "postcss-reporter": "^5.0.0",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^1.5.0-beta.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
