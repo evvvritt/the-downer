@@ -8,7 +8,7 @@
     <footer class="my4" v-show="doc">
       <subscribe></subscribe>
       <small class="block mt6 mx-auto" style="font-size:0.75em; max-width:18em">
-        The Downer is made possible through the generosity of <a href=" http://www.mottodistribution.com/site/?page_id=1020" target="_blank" rel="nofollow">Motto Books</a>
+        The Downer is made possible through the generosity of <a href=" http://www.mottodistribution.com/site/?page_id=1020" target="_blank" rel="nofollow">Motto Berlin</a>
       </small>
     </footer>
   </article>
