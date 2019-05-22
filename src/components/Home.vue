@@ -7,6 +7,9 @@
     <section class="my-1em children-mt-1em" v-if="doc" v-html="$options.filters.richtext(doc.text)"></section>
     <footer class="my4" v-show="doc">
       <subscribe></subscribe>
+      <small class="block mt6 mx-auto" style="font-size:0.625em; max-width:18em">
+        The Downer is made possible through the generosity of <a href=" http://www.mottodistribution.com/site/?page_id=1020" target="_blank" rel="nofollow">Motto Books</a>
+      </small>
     </footer>
   </article>
 </template>
